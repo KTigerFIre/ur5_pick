@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: summer_description
+    relative_path: urdf/summer_hand_robot.urdf.xacro
+    xacro_args: "--inorder "
+  SRDF:
+    relative_path: config/ur5_robotiq3.srdf
+  CONFIG:
+    author_name: Inhwan Kwon
+    author_email: kwon102030@gmail.com
+    generated_timestamp: 1566233597

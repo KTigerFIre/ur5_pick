@@ -1,0 +1,1 @@
+controller_joint_names: [shoulder_pan_joint, shoulder_lift_joint, elbow_joint, wrist_1_joint, wrist_2_joint, wrist_3_joint, finger_1_joint_1, finger_1_joint_2, finger_1_joint_3, finger_2_joint_1, finger_2_joint_2, finger_2_joint_3, finger_middle_joint_1, finger_middle_joint_2, finger_middle_joint_3]
