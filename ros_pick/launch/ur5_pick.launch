@@ -18,13 +18,17 @@
 
   <!-- push robot_description to factory and spawn robot in gazebo -->
   <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" 
-         args="-urdf -param robot_description -model summer_robot -z 0.0"
+         args="-urdf -param robot_description -model summer_robot -z 0.1
+            -J elbow_joint 1.45
+            -J shoulder_lift_joint -0.75
+            -J shoulder_pan_joint 0.22
+            -J wrist_1_joint -0.69
+            -J wrist_2_joint 1.89"
          output="screen" />
-
   <node name="spawn_kinect_ros" pkg="gazebo_ros" type="spawn_model" 
-        args="-file $(find smart_grasping_sandbox)/models/kinect_ros/model.sdf -sdf 
-            -x 2.35931 -y 1.242068 -z 0.5 -R 0 -P 0 -Y -2.6122 -model kinect" respawn="false" output="screen" />
-
+        args="-file $(find ros_pick)/models/kinect_ros/model.sdf -sdf 
+            -x 2.35931 -y 0 -z 0.5 -R 0 -P 0 -Y 3.14 -model kinect" respawn="false" output="screen" />
+<!---->
   <include file="$(find summer_gazebo)/launch/controller_utils.launch"/>
     <node name="robot_controllers" pkg="controller_manager" type="spawner"
         output="screen"
@@ -35,7 +39,7 @@
 
   <rosparam file="$(find summer_gazebo)/config/robotiq_controller.yaml" command="load"/>
   <node name="robotiq_controller_spawner" pkg="controller_manager" type="controller_manager" args="spawn robotiq_controller" respawn="false" output="screen"/>
-  <!--
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find urdf_tutorial)/urdf.rviz" />
--->
+
+  <node name="camera_link" pkg="tf" type="static_transform_publisher" args="2.35931 -0.06 0.9 1.54 0 -1.54 world camera_link 100" />
+
 </launch>

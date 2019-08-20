@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<launch>
+  
+  <node name="camera_link" pkg="tf" type="static_transform_publisher" args="2.35931 -0.06 0.9 1.54 0 -1.54 world camera_link 100" />
+
+</launch>
