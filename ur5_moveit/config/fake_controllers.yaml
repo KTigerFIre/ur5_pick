@@ -12,6 +12,7 @@ controller_list:
       - finger_1_joint_1
       - finger_1_joint_2
       - finger_1_joint_3
+      - finger_2_joint_1
       - finger_2_joint_2
       - finger_2_joint_3
       - finger_middle_joint_1
